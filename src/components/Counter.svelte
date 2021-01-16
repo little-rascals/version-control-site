@@ -4,6 +4,7 @@
 	const increment = () => {
 		count += 1;
 	};
+	console.log(increment)
 </script>
 
 <button on:click={increment}>
