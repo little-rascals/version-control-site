@@ -62,3 +62,4 @@ jobs:
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           PROJECT_ID: version-control-6b8d1
+          PROJECT_PATH: ./dist
