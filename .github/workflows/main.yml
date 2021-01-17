@@ -52,7 +52,7 @@ jobs:
         uses: actions/download-artifact@master
       - name: Install dependencies
         run: |
-          cd functions
+          cd dist/functions
           npm install
           cd ..
       - name: Deploy to Firebase
