@@ -56,7 +56,7 @@ jobs:
       - name: Working directory
         run: |
           cd dist
-          npm ci
+          npm install
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
