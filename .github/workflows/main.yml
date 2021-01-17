@@ -31,16 +31,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-      - run : npm test
+      - run: npm test
       - run: npm run build --if-present
-
-        
-      - name: Create parent directory
-      - run : mkdir dist
-      - run: mv functions dist
-      - run: firebase.json dist
-
-          
+      - run: |
+         mkdir dist
+         mv functions dist
+         mv firebase.json dist
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
@@ -55,14 +51,14 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@master
       - name: Install dependencies
-      - run: |
-          cd dist/functions
+        run: |
+          cd functions
           npm install
           cd ..
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
-          args: deploy
+          args: deploy --only function,hosting
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           PROJECT_ID: version-control-6b8d1
