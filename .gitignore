@@ -3,3 +3,8 @@
 /src/node_modules/@sapper/
 yarn-error.log
 /__sapper__/
+.firebaserc
+.svelte
+.vscode
+functions/__sapper__
+functions/node_modules/
