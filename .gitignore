@@ -8,3 +8,4 @@ yarn-error.log
 .vscode
 functions/__sapper__
 functions/node_modules/
+functions/static

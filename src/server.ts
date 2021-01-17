@@ -15,3 +15,5 @@ polka() // You can also use Express
   .listen(PORT, (err: unknown) => {
     if (err) console.log("error", err);
   });
+
+  export { sapper };
