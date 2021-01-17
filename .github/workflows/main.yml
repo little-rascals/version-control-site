@@ -38,10 +38,12 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           path: functions
+          name: functions 
       - name: Archive firebase.json
         uses: actions/upload-artifact@master
         with:
           path: firebase.json
+          name: firebase.json
 
   deploy:
     name: Deploy
