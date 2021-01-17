@@ -9,10 +9,9 @@
     "validate": "svelte-check --ignore src/node_modules/@sapper",
     "build:tailwind": "NODE_ENV=production postcss static/tailwind.css -o static/index.css",
     "build": "npm run build:tailwind && sapper build --legacy && cp -R ./__sapper__/build ./functions/__sapper__",
-    "prebuild": "npm run lint && npm run format && rm -rf functions/__sapper__/build && mkdir -p functions/__sapper__/build",
+    "prebuild": "svelte-check && rm -rf functions/__sapper__/build && mkdir -p functions/__sapper__/build",
     "format": "prettier --write ./**/*.{js,svelte,md,html,json}",
-    "prelint": "npm run format",
-    "lint": "eslint './**/*.{js,svelte}'",
+    "lint": "eslint './src/**/*.{js,svelte}'",
     "lint:fix": "eslint --fix './**/*.{js,svelte}'",
     "test": "jest src",
     "test:watch": "npm run test --- --watch"
@@ -61,8 +60,7 @@
     "tailwindcss": "^2.0.2",
     "ts-jest": "^26.4.4",
     "tslib": "^2.0.1",
-    "typescript": "^4.0.3",
-    "firebase-functions-test": "^0.2.0"
+    "typescript": "^4.0.3"
   },
   "jest": {
     "transform": {

@@ -45,7 +45,7 @@
 </div>
 
 <script context="module" lang="ts">
-  export async function preload({ params }) {
+  export async function preload({ params }: any) {
     // the `slug` parameter is available because
     // this file is called [slug].svelte
     const res = await this.fetch(`blog/${params.slug}.json`);
