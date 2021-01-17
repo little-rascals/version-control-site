@@ -38,6 +38,7 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           path: functions
+          name: dist
       - name: Archive firebase.json
         uses: actions/upload-artifact@v2
         with:
@@ -54,7 +55,7 @@ jobs:
         uses: actions/download-artifact@master
       - name: Working directory
         run: |
-          cd functions
+          cd dist
           npm ci
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
