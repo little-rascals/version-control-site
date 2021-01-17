@@ -30,16 +30,16 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: |
-          npm ci
-          npm test
-          npm run build --if-present
+      - run: npm ci
+      - run : npm test
+      - run: npm run build --if-present
+
         
       - name: Create parent directory
-      - run : |
-          mkdir dist
-          mv functions dist
-          mv firebase.json dist
+      - run : mkdir dist
+      - run: mv functions dist
+      - run: firebase.json dist
+
           
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
