@@ -33,12 +33,18 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build --if-present
-           
+        
+      - name: Create parent directory
+      - run : |
+          mkdir dist
+          mv functions dist
+          mv firebase.json dist
+          
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
-          path: functions
-          name: functions 
+          path: dist
+          name: dist 
 
   deploy:
     name: Deploy
@@ -47,16 +53,17 @@ jobs:
     steps:
       - name: Download Artifact
         uses: actions/download-artifact@master
+    
       - name: Install dependencies
         run: |
-          cd functions
+          cd dist/functions
           npm install
+          cd ..
+          
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only function,hosting
+          args: deploy
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           PROJECT_ID: version-control-6b8d1
-          PROJECT_PATH: ./functions
-
