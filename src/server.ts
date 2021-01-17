@@ -6,6 +6,7 @@ import * as sapper from "@sapper/server";
 const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === "development";
 
+if (dev) {
 polka() // You can also use Express
   .use(
     compression({ threshold: 0 }),
@@ -15,5 +16,6 @@ polka() // You can also use Express
   .listen(PORT, (err: unknown) => {
     if (err) console.log("error", err);
   });
+}
 
   export { sapper };
