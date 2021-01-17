@@ -39,11 +39,6 @@ jobs:
         with:
           path: functions
           name: functions 
-      - name: Archive firebase.json
-        uses: actions/upload-artifact@master
-        with:
-          path: firebase.json
-          name: firebase.json
 
   deploy:
     name: Deploy
@@ -63,4 +58,5 @@ jobs:
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           PROJECT_ID: version-control-6b8d1
+          PROJECT_PATH: ./functions/firebase.json
 
