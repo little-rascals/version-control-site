@@ -37,6 +37,7 @@ jobs:
          mkdir dist
          mv functions dist
          mv firebase.json dist
+         mv static dist
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
