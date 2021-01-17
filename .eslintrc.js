@@ -16,13 +16,5 @@ module.exports = {
       files: ["*.svelte"],
       processor: "svelte3/svelte3",
     },
-    {
-      extends: ["plugin:cypress/recommended"],
-      files: ["cypress/**/*"],
-      env: {
-        "cypress/globals": true,
-      },
-      plugins: ["cypress"],
-    },
   ],
 };

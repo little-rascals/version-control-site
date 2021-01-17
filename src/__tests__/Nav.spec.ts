@@ -7,7 +7,9 @@ test('Nav compoennt should show home', () => {
     segment: 'about'
   })
 
-  expect(getByText('home')).toBeInTheDocument()
-  expect(getByText('about')).toBeInTheDocument()
-  expect(getByText('blog')).toBeInTheDocument()
+  expect( getByText('home')).toBeInTheDocument()
+  expect(getByText('about'))
+  .toBeInTheDocument()
+  expect(
+    getByText('blog')).toBeInTheDocument()
 })
