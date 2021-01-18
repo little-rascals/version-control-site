@@ -45,8 +45,11 @@
   <figcaption>Have fun with Sapper!</figcaption>
 </figure>
 
-<p><strong>Try this file (src/routes/index.svelte)</strong></p>
+<p><strong> Try this file (src/routes/index.svelte)</strong></p>
+
+<PodList />
 
 <script>
   import successkid from "images/successkid.jpg";
+  import PodList from "../components/PodList.svelte";
 </script>
