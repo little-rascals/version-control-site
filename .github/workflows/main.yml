@@ -38,6 +38,7 @@ jobs:
          mv functions dist
          mv firebase.json dist
          mv static dist
+         mv __sapper__ dist
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
