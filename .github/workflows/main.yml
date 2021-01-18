@@ -41,7 +41,7 @@ jobs:
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
-          path: dist
+          path: dist/**/
           name: dist 
 
   deploy:
