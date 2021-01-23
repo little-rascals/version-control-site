@@ -15,7 +15,6 @@ export const indexQuery = graphql`
         title
         description
         number
-        enclosure_url
         fields {
           slug
         }

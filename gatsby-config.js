@@ -1,5 +1,5 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`
+  path: `.env`
 })
 
 module.exports = {
@@ -7,10 +7,17 @@ module.exports = {
     {
       resolve: "@vojtaholik/gatsby-theme-simplecast",
       options: {
+        simplecastApiSecret: process.env.SIMPLECAST_API_SECRET,
+        podcastId: process.env.PODCAST_ID,
         markdownPath: "content/episodes",
         episodeSlug: "show"
       }
     },
     `gatsby-plugin-theme-ui`
-  ]
+  ],
+  siteMetadata: {
+    title: "Version Control",
+    description: "An awesome technology podcast",
+    author: "little-rascals"
+  }
 }
